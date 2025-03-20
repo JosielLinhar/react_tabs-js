@@ -10,13 +10,13 @@ export const tabs = [
   { id: 'tab-3', title: 'Tab 3', content: 'Some text 3' },
 ];
 
-function getActiveTab(tabsArray, tabId) {
+function getActiveTabObject(tabsArray, tabId) {
   return tabsArray.find(tab => tab.id === tabId) || tabsArray[0].id;
 }
 
 export const App = () => {
-  const [activeTabId, setActiveTabId] = useState(tabs[0].content);
-  const activeTab = getActiveTab(tabs, activeTabId);
+  const [activeTabId, setActiveTabId] = useState(tabs[0].id);
+  const activeTab = getActiveTabObject(tabs, activeTabId);
 
   return (
     <div className="section">
